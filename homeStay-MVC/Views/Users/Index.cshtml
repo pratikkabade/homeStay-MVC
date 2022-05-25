@@ -43,42 +43,20 @@
 }
 
 
-<h3>These are the rooms currently avaiable</h3>
 <div id="container">
     <div id="room">
         <ul id="room-icons">
-            <li>
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1">
-                <p id="hotelName">Radisson Blu Mumbai International Airport</p>
-                <p id="stars">5-star hotel</p>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">Mumbai</a><br>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="website">Website</a>
-                <a href="/1.1RoomDetails" id="book">Book</a>
-            </li>
-            <li>
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1">
-                <p id="hotelName">Radisson Blu Mumbai International Airport</p>
-                <p id="stars">5-star hotel</p>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">Mumbai</a><br>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="website">Website</a>
-                <a href="#" id="book">Book</a>
-            </li>
-            <li>
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1">
-                <p id="hotelName">Radisson Blu Mumbai International Airport</p>
-                <p id="stars">5-star hotel</p>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">Mumbai</a><br>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="website">Website</a>
-                <a href="#" id="book">Book</a>
-            </li>
-            <li>
-                <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1">
-                <p id="hotelName">Radisson Blu Mumbai International Airport</p>
-                <p id="stars">5-star hotel</p>
-                <p href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">Mumbai</p><br>
-                <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="website">Website</a>
-                <a href="/1RoomDetails" id="book">Book</a>
-            </li>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1">
+                    <p id="hotelName">@Html.DisplayFor(modelItem => item.OwnerName)</p>
+                    <p id="stars">5-star hotel</p>
+                    <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">@Html.DisplayFor(modelItem => item.ContactNo)</a><br>
+                    <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="website">Website</a>
+                    <a href="/1.1RoomDetails" id="book">Book @Html.ActionLink("Details", "Details", new { id = item.OwnerID })</a>
+                </li>
+            }                
         </ul>
     </div>
 </div>

@@ -165,7 +165,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\PDetailsController.cs" />
+    <Compile Include="Controllers\PersonalDetailsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="DAL\PDetailsContext.cs" />
     <Compile Include="DAL\PersonalDetailContext.cs" />
     <Compile Include="DAL\RoomContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -174,6 +177,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\PDetails.cs" />
+    <Compile Include="Models\PersonalDetails.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -234,9 +239,14 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\PersonalDetails\Index.cshtml" />
+    <Content Include="Views\PersonalDetails\Create.cshtml" />
+    <Content Include="Views\PDetails\Index.cshtml" />
+    <Content Include="Views\PDetails\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Details\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -10,8 +10,12 @@ namespace homeStay_MVC.Models
     {
         [Key]
         public int OwnerID { get; set; }
+
+
         [Required(ErrorMessage = "Enter the Owner Name")]
         public string OwnerName { get; set; }
+
+
         [Required(ErrorMessage = "Contact No is Required")]
         public string ContactNo { get; set; }
     }

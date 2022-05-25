@@ -13,7 +13,7 @@ namespace homeStay_MVC.DAL
         public PersonalDetailContext() : base("HomeContext")
         { }
 
-        public DbSet<Owner> Owners { get; set; }
+        public DbSet<PersonalDetails> Persons { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

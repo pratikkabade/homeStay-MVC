@@ -166,6 +166,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="DAL\PersonalDetailContext.cs" />
     <Compile Include="DAL\RoomContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,0 +1,84 @@
+﻿h3 {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    color: rgb(57, 57, 59);
+}
+
+#container {
+    margin-top: 30px;
+    display: flex;
+    padding-top: 10px;
+}
+
+#room-icons li {
+    display: inline-block;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background-color: rgba(253, 253, 253, 0.164);
+    padding: 20px;
+}
+
+    #room-icons li:hover {
+        box-shadow: 0 1px 10px rgba(7, 95, 177, 0.397);
+    }
+
+#room-icons img {
+    width: 100%;
+    height: 40%;
+    border-radius: 15px;
+}
+
+#room-icons #hotelName {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    width: 300px;
+    text-align: center;
+}
+
+#room-icons #stars {
+    color: grey;
+    font-size: 20px;
+    text-align: center;
+}
+
+#room-icons #address {
+    padding: 20px;
+    color: rgb(57, 57, 59);
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+    #room-icons #address:hover {
+        text-decoration: none;
+        color: gray;
+    }
+
+#room-icons #website {
+    background-color: rgba(147, 243, 247, 0.89);
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#room-icons #book {
+    background-color: rgb(0, 132, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-left: 80px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#room-icons #website:hover, #book:hover {
+    text-decoration: none;
+    filter: brightness(1.2);
+}

@@ -1,0 +1,115 @@
+﻿
+/* Contact and Signin-Signup styles
+-------------------------------------------------- */
+
+#contact {
+    justify-content: flex-end;
+}
+
+/* back body  */
+#wrapper {
+    width: 100%;
+    padding-top: 60px;
+    margin-bottom: 70px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button,
+select {
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#field {
+    margin-bottom: 20px;
+}
+
+#form-mid {
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 10px rgba(7, 95, 177, 0.397);
+    padding: 60px;
+    padding-right: 100px;
+    border-radius: 14px;
+}
+
+    #form-mid form input,
+    #form-mid form textarea {
+        background: var(--accentdim2);
+        border: 2px solid var(--accentdim2);
+        color: var(--accentdark);
+        font-size: 18px;
+        font-weight: 500;
+        padding: 12px 15px;
+        width: 100%;
+        border-radius: 14px;
+        height: 55px;
+    }
+
+    #form-mid form textarea {
+        resize: none;
+        min-height: 140px;
+    }
+
+        #form-mid form input:focus,
+        #form-mid form textarea:focus {
+            outline: none;
+            border: 2px solid var(--accent);
+            background: var(--accentdim2);
+            box-shadow: var(--shadowsmall);
+        }
+
+
+/* send button  */
+.btn-contact {
+    border: none;
+    font-size: 18px;
+    font-weight: 800 !important;
+    padding: 15px 30px;
+    margin: 20px auto 0;
+    color: var(--accentdim2);
+    background: var(--accent);
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+
+#form-mid form input:hover,
+#form-mid form textarea:hover {
+    cursor: text;
+}
+
+.btn-contact:hover {
+    box-shadow: var(--shadowsmall);
+    filter: var(--bright);
+}
+
+.reg {
+    color: rgb(0, 140, 255);
+}
+
+    .reg:hover {
+        text-decoration: none;
+        color: rgb(77, 174, 253);
+        transform: scale(1.3);
+    }

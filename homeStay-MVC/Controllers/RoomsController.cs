@@ -21,6 +21,19 @@ namespace homeStay_MVC.Controllers
             return View(db.Admins.ToList());
         }
 
+        // GET: Admins
+        public ActionResult Tour()
+        {
+            return View(db.Admins.ToList());
+        }
+
+
+        // GET: Admins
+        public ActionResult TourBook()
+        {
+            return View(db.Admins.ToList());
+        }
+
 
         // Star5
         public ActionResult Star5()

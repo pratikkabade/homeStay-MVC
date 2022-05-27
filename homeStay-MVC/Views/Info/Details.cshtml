@@ -1,9 +1,9 @@
 ﻿@model homeStay_MVC.Models.Info
 
 @{
-    ViewBag.Title = "Details of @Html.DisplayFor(model => model.FirstName)";
+    ViewBag.Title = "Details";
 }
-<head></head>
+
 <style>
     table {
         border-collapse: collapse;
@@ -20,8 +20,7 @@
     }
 </style>
 
-
-<h3 class="firstText">Details of @Html.DisplayFor(model => model.FirstName)</h3>
+<h3 class="firstText">Details of <span style="font-style:italic; color:black; font-weight:600;">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</span></h3>
 <hr />
 <table class="table">
     <tr>
@@ -30,6 +29,15 @@
         </th>
         <td>
             @Html.DisplayFor(model => model.FirstName)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Last Name
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.LastName)
         </td>
     </tr>
 

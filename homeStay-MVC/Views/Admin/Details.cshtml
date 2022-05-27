@@ -1,58 +1,129 @@
 ﻿@model homeStay_MVC.Models.Admin
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-<h2 class="firstText">Details</h2>
-<hr />
 
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.picOne)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.picTwo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.picThree)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RoomName)
-        </dd>
-
-        <dd>
-            @Html.DisplayFor(model => model.Stars)
-        </dd>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            @Html.ActionLink("Back to List", "ManageRooms")
-        </div>
+<style>
+    table {
+        border-collapse: collapse;
     }
-</div>
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(odd) {
+        background-color: rgba(230, 247, 255, 0.4);
+    }
+</style>
+
+
+<h3 class="firstText">Details of <span style="font-style:italic; color:black; font-weight:600;">@Html.DisplayFor(model => model.RoomName)</span></h3>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            picOne
+        </th>
+        <td>
+            <img src="@Html.DisplayFor(model => model.picOne)" style="width:80px; height:60px" />
+            <a href="@Html.DisplayFor(model => model.picOne)">@Html.DisplayFor(model => model.picOne)</a>
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            picTwo
+        </th>
+        <td>
+            <img src="@Html.DisplayFor(model => model.picTwo)" style="width:80px; height:60px" />
+            <a href="@Html.DisplayFor(model => model.picTwo)">@Html.DisplayFor(model => model.picTwo)</a>
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            picThree
+        </th>
+        <td>
+            <img src="@Html.DisplayFor(model => model.picThree)" style="width:80px; height:60px" />
+            <a href="@Html.DisplayFor(model => model.picThree)">@Html.DisplayFor(model => model.picThree)</a>
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            RoomName
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.RoomName)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Stars
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Stars)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Address
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Address)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Address
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.shortAddress)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Website
+        </th>
+        <td>
+            <a href="@Html.DisplayFor(model => model.Website)">Open Link</a>
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Rating
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Rating)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Price
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Price)
+        </td>
+    </tr>
+</table>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "ManageRooms")
+    </div>
+}

@@ -29,7 +29,7 @@ namespace homeStay_MVC.Models
 
 
         [Required(ErrorMessage = "Please enter Contact Number")]
-        public int ContactNumber { get; set; }
+        public string ContactNumber { get; set; }
 
 
         [Required(ErrorMessage = "Please enter Email")]

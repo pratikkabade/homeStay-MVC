@@ -250,6 +250,8 @@
     <Content Include="Views\Rooms\_Price1.cshtml" />
     <Content Include="Views\Rooms\_Price2.cshtml" />
     <Content Include="Views\Rooms\_Everything.cshtml" />
+    <Content Include="Views\Rooms\Tour.cshtml" />
+    <Content Include="Views\Rooms\_TourBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

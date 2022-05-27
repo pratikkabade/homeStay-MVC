@@ -21,6 +21,12 @@ namespace homeStay_MVC.Controllers
             return View(db.Owners.ToList());
         }
 
+        // GET: Owners
+        public ActionResult ManageRooms()
+        {
+            return View(db.Owners.ToList());
+        }
+
         // GET: Owners/Details/5
         public ActionResult Details(int? id)
         {
@@ -53,7 +59,7 @@ namespace homeStay_MVC.Controllers
             {
                 db.Owners.Add(owner);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ManageRooms");
             }
 
             return View(owner);
@@ -85,7 +91,7 @@ namespace homeStay_MVC.Controllers
             {
                 db.Entry(owner).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ManageRooms");
             }
             return View(owner);
         }
@@ -113,7 +119,7 @@ namespace homeStay_MVC.Controllers
             Owner owner = db.Owners.Find(id);
             db.Owners.Remove(owner);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ManageRooms");
         }
 
         protected override void Dispose(bool disposing)

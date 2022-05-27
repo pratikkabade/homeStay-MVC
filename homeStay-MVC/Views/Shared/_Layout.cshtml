@@ -29,12 +29,25 @@
         a {
             color: var(--accent);
             font-size: 17px;
+            transition: 0.3s;
         }
 
             a:hover {
-                border-radius: 10px;
-                background-color: rgba(153, 221, 255, 0.4);
+                text-decoration:none;
+                border-radius: 20px;
             }
+
+            a.btn-contact:hover {
+                color: white;
+            }
+
+            a.btn-contact:focus {
+                color: white;
+            }
+
+        .btn-contact a:hover{
+            color: white;
+        }
 
         .icon-bar {
             background-color: black;
@@ -55,7 +68,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Rooms", "", "Rooms")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -66,7 +78,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - <span>HomeStay</span>, It’s not just another resort.</p>
+            <p>&copy; @DateTime.Now.Year - <span>HomeStay</span>, Not just another resort.</p>
         </footer>
     </div>
 

@@ -1,40 +1,23 @@
 ﻿@model IEnumerable<homeStay_MVC.Models.Owner>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Management";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactNo)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OwnerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactNo)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.OwnerID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.OwnerID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.OwnerID })
-            </td>
-        </tr>
+<h2>Management</h2>
+<link href="~/Content/Form.css" rel="stylesheet" />
+<style>
+    .separator{
+        display:flex;
+        justify-content:space-evenly!important;
+        padding:200px;
     }
+</style>
 
-</table>
+<div class="separator">
+    <!--@Html.ActionLink("Personal Details", "PersonalDetails", "Index", new { @class = "btn-contact" })-->
+    <a id="bn" class="btn-contact" href="http://localhost:50784/Owners/ManageRooms">Room Details</a>
+
+    <!--@Html.ActionLink("Personal Details", "PersonalDetails", "Index", new { @class = "btn-contact" })-->
+    <a id="bn" class="btn-contact" href="http://localhost:50784/PersonalDetails">Personal Details</a>
+</div>

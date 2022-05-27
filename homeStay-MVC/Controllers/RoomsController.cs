@@ -22,25 +22,38 @@ namespace homeStay_MVC.Controllers
         }
 
 
-        // GET: Admins
-        public ActionResult Filter()
-        {
-            return View(db.Admins.ToList());
-        }
-
-
-        // GET: Admins
+        // Star5
         public ActionResult Star5()
         {
             return View(db.Admins.ToList());
         }
 
-        // GET: Admins
+        // Star4
         public ActionResult Star4()
         {
             return View(db.Admins.ToList());
         }
 
+        // Star3
+        public ActionResult Star3()
+        {
+            return View(db.Admins.ToList());
+        }
+
+        public ActionResult Price1()
+        {
+            return View(db.Admins.ToList());
+        }
+
+        public ActionResult Price2()
+        {
+            return View(db.Admins.ToList());
+        }
+
+        public ActionResult Everything()
+        {
+            return View(db.Admins.ToList());
+        }
 
         // GET: Admins/Details/5
         public ActionResult Details(int? id)

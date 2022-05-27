@@ -244,9 +244,12 @@
     <Content Include="Views\Info\Create.cshtml" />
     <Content Include="Views\Info\Details.cshtml" />
     <Content Include="Views\Info\Greet.cshtml" />
-    <Content Include="Views\Rooms\Filter.cshtml" />
     <Content Include="Views\Rooms\_Star5.cshtml" />
     <Content Include="Views\Rooms\_Star4.cshtml" />
+    <Content Include="Views\Rooms\_Star3.cshtml" />
+    <Content Include="Views\Rooms\_Price1.cshtml" />
+    <Content Include="Views\Rooms\_Price2.cshtml" />
+    <Content Include="Views\Rooms\_Everything.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

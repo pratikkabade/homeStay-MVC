@@ -1,10 +1,10 @@
-﻿@model IEnumerable<homeStay_MVC.Models.Admin>
+﻿
+@model IEnumerable<homeStay_MVC.Models.Admin>
 
 @{
     ViewBag.Title = "Rooms";
 }
 <link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
-
 <link href="~/Content/Index.css" rel="stylesheet" />
 
 <style>
@@ -21,10 +21,9 @@
     .filter {
         border-radius: 20px;
         padding: 20px;
-        background-color: honeydew;
-        margin-top: 30px;
+        background-color: var(--accentdim2);
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .filterBtn {
@@ -33,6 +32,8 @@
         font-weight: 500;
         color: white;
         padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         background-color: var(--accent);
         border-radius: 10px;
         transition: 0.3s;
@@ -40,34 +41,196 @@
 
         .filterBtn:hover {
             transition: 0.3s;
-            filter: brightness(1.2);
+            filter: brightness(1.3);
             color: white;
+            cursor: pointer;
         }
+
+    #filter1 {
+        display: none;
+    }
+
+    #switCh {
+        display: flex;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        margin-right: 70%;
+        background-color: white;
+        border: 1px solid rgba(204, 238, 255, 0.5);
+    }
+
+    #Pr1, #Pr2, #Str5, #Str4, #Str3, #sss, #ppp{
+        display:none;
+    }
+
+    hr{
+        margin-top:500px;
+    }
 </style>
 
-
-
-<div class="filter">
-    <div class="starFilter">
-        <a class="filterBtn" @Html.ActionLink("Filter results", "Filter", new { @class = "filterBtn" })
-    </div>
+<div class="filter" id="switCh">
+    <a class="filterBtn" id="sWstar">Stars</a>
+    <a class="filterBtn" id="sWprice">Price</a>
+    <a class="filterBtn" id="sWall" style="border-radius:50px; filter:brightness(1.3)">None</a>
 </div>
 
-
-<div id="container">
-    <div id="room">
-        <ul id="room-icons">
-            @foreach (var item in Model)
-            {
-                <li id="li@Html.DisplayFor(modelItem => item.Stars)">
-                    <img src="@Html.DisplayFor(modelItem => item.picTwo)" class="imm">
-                    <p id="hotelName">@Html.DisplayFor(modelItem => item.RoomName)</p>
-                    <p id="stars">@Html.DisplayFor(modelItem => item.Stars)-star Hotel </p>
-                    <p id="address">Price - <span>@Html.DisplayFor(modelItem => item.Price)</span>/-</p><br>
-                    <a href="@Html.DisplayFor(modelItem => item.Website)" target="_blank" id="website">Website</a>
-                    @Html.ActionLink("Details", "Details", new { id = item.RoomID }, new { @id = "book" })
-                </li>
-            }
-        </ul>
+<section id="sss" style="display:none;">
+    <div id="bTstar">
+        <div class="filter" id="filter">
+            <div class="starFilter">
+                <a class="filterBtn" id="star5">5-stars</a>
+                <a class="filterBtn" id="star4">4-stars</a>
+                <a class="filterBtn" id="star3">3-stars</a>
+            </div>
+        </div>
+        <div class="filter" id="filter1">
+            <div class="starFilter">
+                <a class="filterBtn" id="star5a">5-stars</a>
+                <a class="filterBtn" id="star4a">4-stars</a>
+                <a class="filterBtn" id="star3a">3-stars</a>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div id="rM">
+        <div id="Str5">
+            @Html.Partial("_Star5")
+        </div>
+        <div id="Str4">
+            @Html.Partial("_Star4")
+        </div>
+        <div id="Str3">
+            @Html.Partial("_Star3")
+        </div>
+    </div>
+</section>
+
+
+<section id="ppp">
+    <div id="bTprice">
+        <div class="filter" id="fPri1">
+            <div class="starFilter">
+                <a class="filterBtn" id="pri1">Below 4000</a>
+                <a class="filterBtn" id="pri2">Above 4000</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="rM">
+        <div id="Pr1">
+            @Html.Partial("_Price1")
+        </div>
+        <div id="Pr2">
+            @Html.Partial("_Price2")
+        </div>
+    </div>
+</section>
+
+
+<section id="aaa">
+    @Html.Partial("_Everything")
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#star5").click(function () {
+            $("#Str5").slideDown("slow");
+            $("#Str4").slideUp("slow");
+            $("#Str3").slideUp("slow");
+
+            $("#star5").css("border-radius", "50px");
+            $("#star5").css("filter", "brightness(1.3)");
+            $("#star4").css("border-radius", "10px");
+            $("#star4").css("filter", "brightness(1)");
+            $("#star3").css("border-radius", "10px");
+            $("#star3").css("filter", "brightness(1)");
+        });
+        $("#star4").click(function () {
+            $("#Str4").slideDown("slow");
+            $("#Str5").slideUp("slow");
+            $("#Str3").slideUp("slow");
+
+            $("#star4").css("border-radius", "50px");
+            $("#star4").css("filter", "brightness(1.3)");
+            $("#star5").css("border-radius", "10px");
+            $("#star5").css("filter", "brightness(1)");
+            $("#star3").css("border-radius", "10px");
+            $("#star3").css("filter", "brightness(1)");
+        });
+        $("#star3").click(function () {
+            $("#Str3").slideDown("slow");
+            $("#Str4").slideUp("slow");
+            $("#Str5").slideUp("slow");
+
+            $("#star3").css("border-radius", "50px");
+            $("#star3").css("filter", "brightness(1.3)");
+            $("#star5").css("border-radius", "10px");
+            $("#star5").css("filter", "brightness(1)");
+            $("#star4").css("border-radius", "10px");
+            $("#star4").css("filter", "brightness(1)");
+
+        });
+    });
+
+    $(document).ready(function () {
+        $("#pri1").click(function () {
+            $("#Pr1").slideDown("slow");
+            $("#Pr2").slideUp("slow");
+
+            $("#pri1").css("border-radius", "50px");
+            $("#pri1").css("filter", "brightness(1.3)");
+            $("#pri2").css("border-radius", "10px");
+            $("#pri2").css("filter", "brightness(1)");
+        });
+        $("#pri2").click(function () {
+            $("#Pr2").slideDown("slow");
+            $("#Pr1").slideUp("slow");
+
+            $("#pri2").css("border-radius", "50px");
+            $("#pri2").css("filter", "brightness(1.3)");
+            $("#pri1").css("border-radius", "10px");
+            $("#pri1").css("filter", "brightness(1)");
+        });
+    });
+
+    $(document).ready(function () {
+        $("#sWstar").click(function () {
+            $("#sss").slideDown("slow");
+            $("#aaa").slideUp("slow");
+            $("#ppp").slideUp("slow");
+
+            $("#sWstar").css("border-radius", "50px");
+            $("#sWstar").css("filter", "brightness(1.3)");
+            $("#sWprice").css("border-radius", "10px");
+            $("#sWprice").css("filter", "brightness(1)");
+            $("#sWall").css("border-radius", "10px");
+            $("#sWall").css("filter", "brightness(1)");
+        });
+        $("#sWprice").click(function () {
+            $("#ppp").slideDown("slow");
+            $("#aaa").slideUp("slow");
+            $("#sss").slideUp("slow");
+
+            $("#sWprice").css("border-radius", "50px");
+            $("#sWprice").css("filter", "brightness(1.3)");
+            $("#sWstar").css("border-radius", "10px");
+            $("#sWstar").css("filter", "brightness(1)");
+            $("#sWall").css("border-radius", "10px");
+            $("#sWall").css("filter", "brightness(1)");
+        });
+        $("#sWall").click(function () {
+            $("#aaa").slideDown("slow");
+            $("#sss").slideUp("slow");
+            $("#ppp").slideUp("slow");
+
+            $("#sWall").css("border-radius", "50px");
+            $("#sWall").css("filter", "brightness(1.3)");
+            $("#sWprice").css("border-radius", "10px");
+            $("#sWprice").css("filter", "brightness(1)");
+            $("#sWstar").css("border-radius", "10px");
+            $("#sWstar").css("filter", "brightness(1)");
+        });
+    });
+</script>

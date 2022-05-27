@@ -6,7 +6,7 @@
         <ul id="room-icons">
             @foreach (var item in Model)
             {
-                if (item.Stars == 4)
+                if (item.Price > 3000)
                 {
                     <li>
                         <img src="@Html.DisplayFor(modelItem => item.picTwo)" class="imm">

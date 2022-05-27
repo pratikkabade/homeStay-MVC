@@ -1,58 +1,81 @@
-﻿@model homeStay_MVC.Models.Owner
+﻿@model homeStay_MVC.Models.Admin
 
 @{
-    ViewBag.Title = @Html.DisplayFor(model => model.OwnerName);
+    ViewBag.Title = @Html.DisplayFor(model => model.RoomName);
 }
 <link href="~/Content/Index.css" rel="stylesheet" />
 <link href="~/Content/Details.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/c5266611a7.js" crossorigin="anonymous"></script>
+<style>
+    #s1 {
+        color: gold;
+    }
+    #s2 {
+        color: gray;
+    }
+    .revi {
+        display: flex;
+        justify-content: space-between;
+        font-size: 25px;
+        margin-top:10px;
+    }
+</style>
+
 
 <section class="details">
     <div class="images">
-        <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1" draggable="false">
-        <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1" draggable="false">
-        <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1" draggable="false">
+        <img src="@Html.DisplayFor(modelItem => modelItem.picOne)" draggable="false">
+        <img src="@Html.DisplayFor(modelItem => modelItem.picTwo)" draggable="false">
+        <img src="@Html.DisplayFor(modelItem => modelItem.picThree)" draggable="false">
     </div>
     <div class="subdetails">
         <div class="text">
-            <p id="hotelName">@Html.DisplayFor(model => model.OwnerName)</p>
-            <p id="stars">@Html.DisplayFor(model => model.ContactNo)-star Hotel</p>
+            <p id="hotelName">@Html.DisplayFor(model => model.RoomName)</p>
+            <p id="stars">@Html.DisplayFor(model => model.Stars)-star Hotel</p>
             <p href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">
-                Mumbai
-                Metro Station, Marol Maroshi Rd, near Marol, Bori Colony, Gamdevi, Marol, Andheri East, Mumbai, Maharashtra 400059•022 6634 1234
+                @Html.DisplayFor(model => model.Address)
             </p>
-            <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" target="_blank" id="website">Website</a>
+            <a href="@Html.DisplayFor(model => model.Website)" target="_blank" id="website">Website</a>
             <a onclick="copyToClipboard('#address')" id="share">Share</a>
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <script>
-                function copyToClipboard(element) {
-                    var $temp = $("<input>");
-                    $("body").append($temp);
-                    $temp.val($(element).text()).select();
-                    document.execCommand("copy");
-                    $temp.remove();
-                }
-            </script>
         </div>
         <div class="buybtn">
             <a href="#avail" id="costOfRoom"></a>
         </div>
     </div>
-
+    
     <div class="subdetails" id="rev">
-        <div class="reviews">
-            <p> Rated </p>
+        <div class="revi">
+            <p> Rating </p>
+            <span id="s1"></span><span id="s2"></span>
         </div>
         <div class="reviews">
-            <span class="stars-container stars-80">★★★★★</span>
-        </div>
-        <div class="reviews">
-            <a href="#rev" id="review">Reviews</a>
+            <a href="#rev" id="review">Reviews   </a>
         </div>
     </div>
+    <script>
+        var ratedStars = @Html.DisplayFor(model => model.Rating);
+
+        if (ratedStars == 5) {
+            document.getElementById("s1").innerHTML = "★★★★★";
+            document.getElementById("s2").innerHTML = "";
+        } else if (ratedStars == 4) {
+            document.getElementById("s1").innerHTML = "★★★★";
+            document.getElementById("s2").innerHTML = "★";
+        } else if (ratedStars == 3) {
+            document.getElementById("s1").innerHTML = "★★★";
+            document.getElementById("s2").innerHTML = "★★";
+        } else if (ratedStars == 2) {
+            document.getElementById("s1").innerHTML = "★★";
+            document.getElementById("s2").innerHTML = "★★★";
+        } else if (ratedStars == 1) {
+            document.getElementById("s1").innerHTML = "★";
+            document.getElementById("s2").innerHTML = "★★★★";
+        }
+    </script>
 </section>
 
 <section class="reviw" id="reviw">
@@ -149,7 +172,7 @@
 
 <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script>
-    var singleDayCost = @Html.DisplayFor(model => model.ContactNo);
+    var singleDayCost = @Html.DisplayFor(model => model.Price);
 
     $(document).ready(function () {
         yourFunction();

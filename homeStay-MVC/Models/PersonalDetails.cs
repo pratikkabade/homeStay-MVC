@@ -16,5 +16,9 @@ namespace homeStay_MVC.Models
         [Required(ErrorMessage = "Enter the First Name")]
         public string FirstName { get; set; }
 
+
+        [Required(ErrorMessage = "Enter the First Name")]
+        public string LastName { get; set; }
+
     }
 }

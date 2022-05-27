@@ -15,25 +15,25 @@ namespace homeStay_MVC.Controllers
     {
         private RoomContext db = new RoomContext();
 
-        // GET: Owners
+        // GET: Admins
         public ActionResult Index()
         {
-            return View(db.Owners.ToList());
+            return View(db.Admins.ToList());
         }
 
-        // GET: Owners/Details/5
+        // GET: Admins/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Owner owner = db.Owners.Find(id);
-            if (owner == null)
+            Admin admin = db.Admins.Find(id);
+            if (admin == null)
             {
                 return HttpNotFound();
             }
-            return View(owner);
+            return View(admin);
         }
 
 

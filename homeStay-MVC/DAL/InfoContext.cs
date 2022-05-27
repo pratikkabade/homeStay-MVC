@@ -8,12 +8,12 @@ using homeStay_MVC.Models;
 
 namespace homeStay_MVC.DAL
 {
-    public class PDetailsContext : DbContext
+    public class InfoContext : DbContext
     {
-        public PDetailsContext() : base("HomeContext")
+        public InfoContext() : base("InfoContext")
         { }
 
-        public DbSet<PDetails> PDetail { get; set; }
+        public DbSet<Info> Infos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

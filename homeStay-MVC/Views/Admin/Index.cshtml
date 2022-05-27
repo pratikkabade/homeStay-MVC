@@ -1,4 +1,4 @@
-﻿@model IEnumerable<homeStay_MVC.Models.Owner>
+﻿@model IEnumerable<homeStay_MVC.Models.Admin>
 
 @{
     ViewBag.Title = "Management";
@@ -7,17 +7,17 @@
 <h2>Management</h2>
 <link href="~/Content/Form.css" rel="stylesheet" />
 <style>
-    .separator{
-        display:flex;
-        justify-content:space-evenly!important;
-        padding:200px;
+    .separator {
+        display: flex;
+        justify-content: space-evenly !important;
+        padding: 200px;
     }
 </style>
 
 <div class="separator">
     <!--@Html.ActionLink("Personal Details", "PersonalDetails", "Index", new { @class = "btn-contact" })-->
-    <a id="bn" class="btn-contact" href="http://localhost:50784/Owners/ManageRooms">Room Details</a>
+    <a id="bn" class="btn-contact" href="http://localhost:50784/Admin/ManageRooms">Room Details</a>
 
     <!--@Html.ActionLink("Personal Details", "PersonalDetails", "Index", new { @class = "btn-contact" })-->
-    <a id="bn" class="btn-contact" href="http://localhost:50784/PersonalDetails">Personal Details</a>
+    <a id="bn" class="btn-contact" href="http://localhost:50784/Info">User Details</a>
 </div>

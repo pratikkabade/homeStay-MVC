@@ -11,6 +11,7 @@
     }
     .btn-contact:hover{
         color:white;
+        transition:0.3s;
     }
     /* back body  */
     #wrapper {
@@ -67,13 +68,12 @@
             min-height: 140px;
         }
 
-    #form-mid form input:focus,
-    #form-mid form textarea:focus {
-        outline: none;
-        border: 2px solid var(--accent);
-        background: var(--accentdim2);
-        box-shadow: var(--shadowsmall);
-    }
+            .TextArea textarea:focus {
+                outline: none;
+                border: 2px solid var(--accent);
+                background: var(--accentdim2);
+                box-shadow: var(--shadowsmall);
+            }
 
 
     /* send button  */
@@ -195,10 +195,6 @@
 
 
 
-
-
-
-
 <div id="contact" id="contact">
     <div id="wrapper">
         <section id="contact-form" style="max-width: 450px; margin: 0 auto;">
@@ -215,7 +211,7 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.FirstName, new { @class = "field" })
                         @Html.TextBoxFor(model => model.FirstName, new { @class = "TextArea" })
-                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "TextArea" })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                 </div><br />
 
                 <div class="form-group">
@@ -240,28 +236,26 @@
                     @Html.LabelFor(m => m.ContactNumber, new { @class = "field" })
                         @Html.TextBoxFor(model => model.ContactNumber, new { @class = "TextArea" })
                         @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
-                </div>
+                </div><br />
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "field" })
                         @Html.TextBoxFor(model => model.Email, new { @class = "TextArea" })
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
+                </div><br />
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.UserCategory, new { @class = "field" })
                         @Html.TextBoxFor(model => model.UserCategory, new { @class = "TextArea" })
                         @Html.ValidationMessageFor(model => model.UserCategory, "", new { @class = "text-danger" })
-                </div>
+                </div><br />
                         <input type="submit" value="Submit" class="btn-contact" />
             </div>
             }
         </section>
     </div>
 </div>
-<div>
-    @Html.ActionLink("Back to List", "ManageRooms")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

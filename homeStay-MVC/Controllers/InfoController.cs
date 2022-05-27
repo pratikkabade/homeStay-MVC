@@ -22,6 +22,13 @@ namespace homeStay_MVC.Controllers
         }
 
 
+        // GET: Infos
+        public ActionResult Greet()
+        {
+            return View(db.Infos.ToList());
+        }
+
+
         // GET: Infos/Details/5
         public ActionResult Details(int? id)
         {
@@ -54,7 +61,7 @@ namespace homeStay_MVC.Controllers
             {
                 db.Infos.Add(info);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Greet");
             }
 
             return View(info);

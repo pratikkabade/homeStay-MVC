@@ -1,0 +1,74 @@
+﻿
+@model IEnumerable<homeStay_MVC.Models.Admin>
+
+@{
+    ViewBag.Title = "Tour";
+}
+<link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
+<link href="~/Content/Index.css" rel="stylesheet" />
+
+<style>
+    #bigCmp {
+        display: flex;
+    }
+
+    #cmp {
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        border: 2px solid rgb(204, 238, 255);
+        border-radius: 20px;
+    }
+
+    .imm {
+        height: 200px;
+        width: 300px;
+    }
+
+    #head {
+        text-align: center;
+        margin: 20px;
+        font-size: 25px;
+    }
+</style>
+
+<!--
+
+
+<div id="bigCmp">
+    <div id="cmp">
+        <p id="head">Select rooms</p>
+        <div id="te">
+            @Html.Partial("_TourBook")
+        </div>
+    </div>
+    <div id="cmp">
+        price
+    </div>
+</div>
+
+<div>Total : <span id="total">0</span></div>
+<button data-amount="10">Add 10</button>
+<button data-amount="50">Add 50</button>
+<button data-amount="100">Add 100</button>
+
+<script>
+    $(document).ready(function () {
+        $('button').bind('click', function () {
+            var $this = $(this),
+                $total = $("#total"),
+                amount = $total.data("amount") || $total.text();
+
+            amount += parseFloat($this.data('amount'));
+
+            $total
+                .data("amount", amount)
+                .text(amount);
+        });
+    });
+</script>
+
+
+-->
+
+<h2 style="margin-top:200px; margin-bottom:200px; margin-left:auto; margin-right:auto;">Appologies for inconvinience, Visit for tours later</h2>

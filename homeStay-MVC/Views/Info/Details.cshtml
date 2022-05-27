@@ -1,0 +1,101 @@
+﻿@model homeStay_MVC.Models.Info
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(odd) {
+        background-color: rgba(230, 247, 255, 0.4);
+    }
+</style>
+
+<h3 class="firstText">Details of <span style="font-style:italic; color:black; font-weight:600;">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</span></h3>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.FirstName)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Last Name
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.LastName)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            DoB
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.DoB)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Gender
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Gender)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Contact Number
+        </th>
+        <td>
+            <a href="tel:@Html.DisplayFor(modelItem => Model.ContactNumber)">@Html.DisplayFor(modelItem => Model.ContactNumber)</a>
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            Email
+        </th>
+        <td>
+            <a href="mailto:@Html.DisplayFor(modelItem => Model.Email)">@Html.DisplayFor(modelItem => Model.Email)</a>
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            User Category
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.UserCategory)
+        </td>
+    </tr>
+
+</table>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+

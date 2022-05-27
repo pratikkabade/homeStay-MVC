@@ -83,7 +83,7 @@ namespace homeStay_MVC.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Create", "Info");
                 }
                 else
                 {

@@ -3,13 +3,66 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - HomeStay</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
+    <style>
+        footer p span {
+            font-size: 15px;
+            font-weight: 500;
+            font-style: italic;
+        }
 
+        .navbar-fixed-top {
+            font-size: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgba(163, 234, 255, 0.1);
+            backdrop-filter: blur(15px);
+        }
+
+        .nav navbar-nav a:hover {
+            background-color: rgba(153, 221, 255, 0.4);
+        }
+
+        a {
+            color: var(--accent);
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+            a:hover {
+                text-decoration:none;
+                border-radius: 20px;
+            }
+
+            a:focus {
+                border-radius: 20px;
+            }
+
+            a.btn-contact:hover {
+                color: white;
+            }
+
+            a.btn-contact:focus {
+                color: white;
+            }
+
+        .btn-contact a:hover{
+            color: white;
+        }
+
+        .icon-bar {
+            background-color: black;
+        }
+        .firstText{
+            margin-top:70px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,14 +70,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("Home-Stay", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "", "Users")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Rooms", "", "Rooms")</li>
+                    <li>@Html.ActionLink("Tour", "Tour", "Rooms")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Owners", "", "Owners")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -34,7 +86,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - <span>HomeStay</span>, Not just another resort.</p>
         </footer>
     </div>
 

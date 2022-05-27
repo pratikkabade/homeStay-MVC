@@ -1,0 +1,23 @@
+﻿
+@model IEnumerable<homeStay_MVC.Models.Admin>
+
+<div id="container">
+    <div id="room">
+        <ul id="room-icons">
+            @foreach (var item in Model)
+            {
+                if (item.Stars < 4)
+                {
+                    <li>
+                        <img src="@Html.DisplayFor(modelItem => item.picTwo)" class="imm">
+                        <p id="hotelName">@Html.DisplayFor(modelItem => item.RoomName)</p>
+                        <p id="stars">@Html.DisplayFor(modelItem => item.Stars)-star Hotel </p>
+                        <p id="address">Price - <span>@Html.DisplayFor(modelItem => item.Price)</span>/-</p><br>
+                        <a href="@Html.DisplayFor(modelItem => item.Website)" target="_blank" id="website">Website</a>
+                        @Html.ActionLink("Details", "Details", new { id = item.RoomID }, new { @id = "book" })
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

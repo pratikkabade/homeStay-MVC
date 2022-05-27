@@ -13,7 +13,8 @@ namespace homeStay_MVC.DAL
         public RoomContext() : base("HomeContext")
         { }
 
-        public DbSet<Owner> Owners { get; set; }
+        //admin to owner 
+        public DbSet<Admin> Admins { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

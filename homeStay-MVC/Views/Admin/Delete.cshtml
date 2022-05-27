@@ -1,0 +1,23 @@
+﻿@model homeStay_MVC.Models.Admin
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/Content/Form.css" rel="stylesheet" />
+
+<h2 class="firstText">Delete</h2>
+<hr />
+
+<h3>Are you sure you want to delete @Html.DisplayFor(model => model.RoomName)?</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn-contact" style="background-color:red" /> <br /><br /><br /><br />
+        @Html.ActionLink("Back to List", "ManageRooms")
+    </div>
+}
+

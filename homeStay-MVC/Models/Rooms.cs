@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace homeStay_MVC.Models
 {
-    public class Users
+    public class Rooms
     {
         [Key]
         public int OwnerID { get; set; }

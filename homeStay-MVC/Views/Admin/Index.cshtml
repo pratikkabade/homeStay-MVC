@@ -4,17 +4,20 @@
     ViewBag.Title = "Management";
 }
 
-<h2>Management</h2>
 <link href="~/Content/Form.css" rel="stylesheet" />
 <style>
     .separator {
         display: flex;
         justify-content: space-evenly !important;
-        padding: 200px;
+        padding: 180px;
     }
 </style>
 
+<h2 class="firstText">Management</h2>
+<hr />
+
 <div class="separator">
+
     <!--@Html.ActionLink("Personal Details", "PersonalDetails", "Index", new { @class = "btn-contact" })-->
     <a id="bn" class="btn-contact" href="http://localhost:50784/Admin/ManageRooms">Room Details</a>
 

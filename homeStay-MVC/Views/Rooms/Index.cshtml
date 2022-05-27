@@ -4,13 +4,53 @@
     ViewBag.Title = "Rooms";
 }
 <link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
+
 <link href="~/Content/Index.css" rel="stylesheet" />
+
 <style>
-    span{
-        color:forestgreen;
-        font-style:oblique;
+    span {
+        color: forestgreen;
+        font-style: oblique;
     }
+
+    .imm {
+        height: 200px;
+        width: 300px;
+    }
+
+    .filter {
+        padding: 20px;
+        background-color: honeydew;
+        margin-top: 30px;
+    }
+
+    .filterBtn {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        padding: 10px;
+        background-color: var(--accent);
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+        .filterBtn:hover {
+            transition: 0.3s;
+            filter: brightness(1.2);
+            color:white;
+        }
 </style>
+
+
+
+<div class="filter">
+    <div class="starFilter">
+        <a href="" class="filterBtn" id="star5">5-stars</a>
+        <a onclick="" href="" class="filterBtn" id="star4">4-stars</a>
+        <button>here</button>
+    </div>
+</div>
 
 
 <div id="container">
@@ -18,8 +58,8 @@
         <ul id="room-icons">
             @foreach (var item in Model)
             {
-                <li>
-                    <img src="@Html.DisplayFor(modelItem => item.picTwo)">
+                <li id="li@Html.DisplayFor(modelItem => item.Stars)">
+                    <img src="@Html.DisplayFor(modelItem => item.picTwo)" class="imm">
                     <p id="hotelName">@Html.DisplayFor(modelItem => item.RoomName)</p>
                     <p id="stars">@Html.DisplayFor(modelItem => item.Stars)-star Hotel </p>
                     <p id="address">Price - <span>@Html.DisplayFor(modelItem => item.Price)</span>/-</p><br>
@@ -30,3 +70,12 @@
         </ul>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#li3").fadeOut("slow");
+        });
+    });
+</script>

@@ -21,6 +21,27 @@ namespace homeStay_MVC.Controllers
             return View(db.Admins.ToList());
         }
 
+
+        // GET: Admins
+        public ActionResult Filter()
+        {
+            return View(db.Admins.ToList());
+        }
+
+
+        // GET: Admins
+        public ActionResult Star5()
+        {
+            return View(db.Admins.ToList());
+        }
+
+        // GET: Admins
+        public ActionResult Star4()
+        {
+            return View(db.Admins.ToList());
+        }
+
+
         // GET: Admins/Details/5
         public ActionResult Details(int? id)
         {

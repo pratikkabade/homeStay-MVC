@@ -19,9 +19,12 @@
     }
 
     .filter {
+        border-radius: 20px;
         padding: 20px;
         background-color: honeydew;
         margin-top: 30px;
+        display: flex;
+        justify-content: center;
     }
 
     .filterBtn {
@@ -38,7 +41,7 @@
         .filterBtn:hover {
             transition: 0.3s;
             filter: brightness(1.2);
-            color:white;
+            color: white;
         }
 </style>
 
@@ -46,9 +49,7 @@
 
 <div class="filter">
     <div class="starFilter">
-        <a href="" class="filterBtn" id="star5">5-stars</a>
-        <a onclick="" href="" class="filterBtn" id="star4">4-stars</a>
-        <button>here</button>
+        <a class="filterBtn" @Html.ActionLink("Filter results", "Filter", new { @class = "filterBtn" })
     </div>
 </div>
 
@@ -70,12 +71,3 @@
         </ul>
     </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("button").click(function () {
-            $("#li3").fadeOut("slow");
-        });
-    });
-</script>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - HomeStay</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
     <style>
         footer p span {
             font-size: 15px;
@@ -17,17 +18,22 @@
             font-size: 20px;
             padding-top: 10px;
             padding-bottom: 10px;
-            background-color: rgba(255, 255, 255, 0.642);
+            background-color: rgba(163, 234, 255, 0.142);
             backdrop-filter: blur(5px);
         }
 
+        .nav navbar-nav a:hover {
+            background-color: rgba(153, 221, 255, 0.4);
+        }
+
         a {
-            color: darkblue;
+            color: var(--accent);
             font-size: 17px;
         }
 
             a:hover {
                 border-radius: 10px;
+                background-color: rgba(153, 221, 255, 0.4);
             }
 
         .icon-bar {
@@ -48,10 +54,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Rooms", "", "Users")</li>
+                    <li>@Html.ActionLink("Rooms", "", "Rooms")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Owners", "", "Owners")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

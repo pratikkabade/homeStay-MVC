@@ -1,8 +1,4 @@
-﻿
-/* Contact and Signin-Signup styles
--------------------------------------------------- */
-
-#contact {
+﻿#contact {
     justify-content: flex-end;
 }
 
@@ -44,31 +40,24 @@ p {
     border-radius: 14px;
 }
 
-    #form-mid form input,
-    #form-mid form textarea {
+.TextArea {
+    background: var(--accentdim2);
+    border: 2px solid var(--accentdim2);
+    color: var(--accentdark);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 15px;
+    width: 100%;
+    border-radius: 14px;
+    height: 55px;
+}
+
+    .TextArea:focus {
+        outline: none;
+        border: 2px solid var(--accent);
         background: var(--accentdim2);
-        border: 2px solid var(--accentdim2);
-        color: var(--accentdark);
-        font-size: 18px;
-        font-weight: 500;
-        padding: 12px 15px;
-        width: 100%;
-        border-radius: 14px;
-        height: 55px;
+        box-shadow: var(--shadowsmall);
     }
-
-    #form-mid form textarea {
-        resize: none;
-        min-height: 140px;
-    }
-
-        #form-mid form input:focus,
-        #form-mid form textarea:focus {
-            outline: none;
-            border: 2px solid var(--accent);
-            background: var(--accentdim2);
-            box-shadow: var(--shadowsmall);
-        }
 
 
 /* send button  */
@@ -93,16 +82,11 @@ p {
     border-radius: 10px;
 }
 
-
-#form-mid form input:hover,
-#form-mid form textarea:hover {
-    cursor: text;
-}
-
-.btn-contact:hover {
-    box-shadow: var(--shadowsmall);
-    filter: var(--bright);
-}
+    .btn-contact:hover {
+        cursor: pointer;
+        box-shadow: var(--shadowsmall);
+        filter: var(--bright);
+    }
 
 .reg {
     color: rgb(0, 140, 255);

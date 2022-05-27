@@ -1,0 +1,219 @@
+﻿@model homeStay_MVC.Models.Owner
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/Content/Index.css" rel="stylesheet" />
+<link href="~/Content/Details.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://app.staticsave.com/root/root.css">
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/c5266611a7.js" crossorigin="anonymous"></script>
+
+<section class="details">
+    <div class="images">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1" draggable="false">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1" draggable="false">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipMM_kCAUy1BUO15WsKfKGoA2voI_bHrjWPl7Vt1=w296-h202-n-k-rw-no-v1" draggable="false">
+    </div>
+    <div class="subdetails">
+        <div class="text">
+            <p id="hotelName">@Html.DisplayFor(model => model.OwnerName)</p>
+            <p id="stars">@Html.DisplayFor(model => model.ContactNo)-star Hotel</p>
+            <p href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" id="address">
+                Mumbai
+                Metro Station, Marol Maroshi Rd, near Marol, Bori Colony, Gamdevi, Marol, Andheri East, Mumbai, Maharashtra 400059•022 6634 1234
+            </p>
+            <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-mumbai-airport?cid=a:se+b:gmb+c:apac+i:local+e:rdb+d:ind+h:INMHBOMAIR" target="_blank" id="website">Website</a>
+            <a onclick="copyToClipboard('#address')" id="share">Share</a>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>
+                function copyToClipboard(element) {
+                    var $temp = $("<input>");
+                    $("body").append($temp);
+                    $temp.val($(element).text()).select();
+                    document.execCommand("copy");
+                    $temp.remove();
+                }
+            </script>
+        </div>
+        <div class="buybtn">
+            <a href="#avail" id="costOfRoom"></a>
+        </div>
+    </div>
+
+    <div class="subdetails" id="rev">
+        <div class="reviews">
+            <p> Rated </p>
+        </div>
+        <div class="reviews">
+            <span class="stars-container stars-80">★★★★★</span>
+        </div>
+        <div class="reviews">
+            <a href="#rev" id="review">Reviews</a>
+        </div>
+    </div>
+</section>
+
+<section class="reviw" id="reviw">
+    <h2>Reviews <i class="fa-solid fa-star-sharp"></i></h2>
+    <div class="posts">
+        <div class="post">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJwKb1ULBNxS6DXDy0g7kyj0j2th6wKUbKAEXl-X=s40-c-c0x00000000-cc-rp-mo-br100">
+            <p>From <span>Tifny</span></p>
+            <span class="stars-container stars-80">★★★★★</span>
+            <p>"Nice to stay with very polite and soft spoken staff,clean room with tasty food"</p>
+        </div>
+        <div class="post">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJwKb1ULBNxS6DXDy0g7kyj0j2th6wKUbKAEXl-X=s40-c-c0x00000000-cc-rp-mo-br100">
+            <p>From <span>Tifny</span></p>
+            <span class="stars-container stars-80">★★★★★</span>
+            <p>"Nice to stay with very polite and soft spoken staff,clean room with tasty food"</p>
+        </div>
+        <div class="post">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJwKb1ULBNxS6DXDy0g7kyj0j2th6wKUbKAEXl-X=s40-c-c0x00000000-cc-rp-mo-br100">
+            <p>From <span>Tifny</span></p>
+            <span class="stars-container stars-80">★★★★★</span>
+            <p>"Nice to stay with very polite and soft spoken staff,clean room with tasty food"</p>
+        </div>
+    </div>
+    <div class="posts">
+        <div class="post">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJwKb1ULBNxS6DXDy0g7kyj0j2th6wKUbKAEXl-X=s40-c-c0x00000000-cc-rp-mo-br100">
+            <p>From <span>Tifny</span></p>
+            <span class="stars-container stars-80">★★★★★</span>
+            <p>"Nice to stay with very polite and soft spoken staff,clean room with tasty food"</p>
+        </div>
+        <div class="post">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJwKb1ULBNxS6DXDy0g7kyj0j2th6wKUbKAEXl-X=s40-c-c0x00000000-cc-rp-mo-br100">
+            <p>From <span>Tifny</span></p>
+            <span class="stars-container stars-80">★★★★★</span>
+            <p>"Nice to stay with very polite and soft spoken staff,clean room with tasty food"</p>
+        </div>
+        <div class="post">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJwKb1ULBNxS6DXDy0g7kyj0j2th6wKUbKAEXl-X=s40-c-c0x00000000-cc-rp-mo-br100">
+            <p>From <span>Tifny</span></p>
+            <span class="stars-container stars-80">★★★★★</span>
+            <p>"Nice to stay with very polite and soft spoken staff,clean room with tasty food"</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="avail" id="avail">
+    <h2>Check availability <i class="fa-solid fa-calendar-day"></i></h2>
+    <div class="datepicker">
+        <div class="date">
+            <p>Check in</p> <input type="date" name="date" id="date1">
+            <p>Check out</p> <input type="date" name="date" id="date2">
+        </div>
+    </div>
+    <div class="compartment">
+        <div class="left">
+            <h3> Total Days -  <span id="tDay">_</span></h3>
+            <h3> Cost for Stay - <span id="Cost"></span></h3>
+            <h3> Total Cost -  <span id="tCost">_</span></h3>
+        </div>
+
+        <div class="right" id="right">
+            <div class="right1">
+                <a id="check" onclick="dateDiff()">Check?</a>
+            </div>
+
+            <div class="right2">
+                <a id="chng" onclick="reloadPage()">Change Dates?</a>
+                <a id="pay" onclick="payGate()">Checkout</a>
+            </div>
+        </div>
+        <div class="paymentGateway" id="pGate" style="display: none;">
+            <p style="font-style: italic; margin-top: 0px">Price Breakdown</p>
+            <p style="margin-top:0px;">Cost - <span id="actual"></span></p>
+            <p style="margin-top:0px;">12% GST - <span id="gst"></span></p>
+            <p style="margin-top:0px;">Total - <span id="totalCost"></span></p>
+        </div>
+    </div>
+    <div id="buyzone">
+        <a https: //www.paypal.com/cgi-bin/webscr" method="post"></a>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="business" value="admin@homestay.com">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="Selected Room">
+            <input type="hidden" name="amount" value="1">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="undefined_quantity" value="1">
+            <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+        </form>
+
+    </div>
+</section>
+
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script>
+    var singleDayCost = @Html.DisplayFor(model => model.ContactNo);
+
+    $(document).ready(function () {
+        yourFunction();
+    });
+    function yourFunction(){
+      document.getElementById("costOfRoom").innerHTML = singleDayCost;
+      document.getElementById("Cost").innerHTML = singleDayCost;
+    }
+
+    function dateDiff() {
+      var d2=document.getElementById("date1").value;
+      var d1=document.getElementById("date2").value;
+          var tod = new Date();
+          var todm = (tod.getMonth()+1);
+          let todm1;
+          if (todm<10) {
+            todm1='0'+todm;
+          } else {
+            todm1=todm;
+          }
+          var todd = (tod.getDate());
+          let todd1;
+          if (todd<10) {
+            todd1='0'+todd;
+          } else {
+            todd1=todd;
+          }
+        var today =tod.getFullYear()+'-'+todm1+'-'+todd1;
+        if (d2<today) {
+          alert('Please recheck the dates');
+        } else if (d1<d2) {
+          alert('Please recheck the dates');
+        } else {
+        var t2 = new Date(d2);
+        var t1 = new Date(d1);
+        var tD = ((t1-t2) / (24*3600*1000))+1;
+      document.getElementById("costOfRoom").innerHTML = singleDayCost;
+      document.getElementById("tDay").innerHTML = tD;
+      tCost1=tD*singleDayCost;
+      document.getElementById("Cost").innerHTML = singleDayCost;
+      document.getElementById("tCost").innerHTML = tCost1;
+      document.getElementById("check").style.visibility = 'hidden';
+      document.getElementById('check').style.backgroundColor = 'white';
+      document.getElementById('check').style.color = 'black';
+      document.getElementById('check').style.cursor = 'default';
+      document.getElementById('chng').style.visibility = 'visible';
+      document.getElementById('pay').style.visibility = 'visible';
+
+      var gst = tCost1/100*12;
+      var actual  = tCost1-gst;
+      document.getElementById("actual").innerHTML = actual;
+      document.getElementById("gst").innerHTML = gst;
+      document.getElementById("totalCost").innerHTML = tCost1;
+      }
+    }
+
+    function reloadPage(){
+      location.reload();
+    }
+
+    function payGate(){
+    document.getElementById('pGate').style.display = 'block';
+    document.getElementById('buyzone').style.display = 'flex';
+    document.getElementById('buyzone').style.justifyContent = 'flex-end';
+    document.getElementById('right').style.display = 'none';
+    }
+</script>

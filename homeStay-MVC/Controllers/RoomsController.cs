@@ -11,7 +11,7 @@ using homeStay_MVC.Models;
 
 namespace homeStay_MVC.Controllers
 {
-    public class UsersController : Controller
+    public class RoomsController : Controller
     {
         private RoomContext db = new RoomContext();
 
